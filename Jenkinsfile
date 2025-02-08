@@ -4,6 +4,11 @@ pipeline{
        maven 'maven'
        jdk 'JDK17'
     }
+    environment {
+       DOCKER_HUB_CREDENTIALS = credentials('ronlety')
+       DOCKER_IMAGE = 'ronlety/proyecto:v9'
+    }
+
     stages {
         stage ('Initialize') {
             steps {
@@ -17,15 +22,11 @@ pipeline{
                 '''
             }       
         }
-    environment {
-       DOCKER_HUB_CREDENTIALS = credentials('ronlety')
-       DOCKER_IMAGE = 'ronlety/proyecto:v9'
-    }
     stage ('Build'){
        steps {
           sh ' sudo docker build -t ${DOCKER_IMAGE} . '
        }
-    } //stage build
+    } 
     stage ('Login & Push')
     {
      steps {
@@ -34,7 +35,7 @@ pipeline{
             sudo docker push ${DOCKER_IMAGE}
          '''
      }
-    } //stage login
-    } //stages
-} //pipeline
+    }
+  } 
+} 
 
