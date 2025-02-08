@@ -5,7 +5,7 @@ pipeline{
        jdk 'JDK17'
     }
     environment {
-       DOCKER_HUB_CREDENTIALS = credentials('ronlety')
+       DOCKERHUB_CREDENTIALS = credentials('ronlety')
        DOCKER_IMAGE = 'ronlety/proyecto:v9'
     }
 
