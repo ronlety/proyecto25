@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app-ronlety
+  name: web-app-ronlety3
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-app-ronlety
+      app: web-app-ronlety3
   template:
     metadata:
       labels:
-        app: web-app-ronlety
+        app: web-app-ronlety3
     spec:
       containers:
-        - name: web-app-ronlety
+        - name: web-app-ronlety3
           image: ronlety85/proyecto:v8
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8089
+            - containerPort: 8087
           env:
             - name: TOMCAT_PORT
-              value: '8089'
+              value: '8087'
             - name: MONGO_URI
               value: "mongodb+srv://admindba:gNe7c2wLFBJKgIdZ@cluster0.vboxk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
             - name: MONGO_PORT
