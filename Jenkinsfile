@@ -23,7 +23,7 @@ pipeline{
     }
     stage ('Build'){
        steps {
-          sh ' sudo docker build -t ${DOCKER_IMAGE}'. '
+          sh ' sudo docker build -t ${DOCKER_IMAGE} . '
        }
     } //stage build
     stage ('Login & Push')
