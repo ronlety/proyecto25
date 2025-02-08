@@ -1,0 +1,6 @@
+MONGO_URI="mongodb+srv://admindba:gNe7c2wLFBJKgIdZ@cluster0.vboxk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_PORT=27017
+MONGO_DB=BookStore
+MONGO_USER=admindba
+MONGO_PWD=gNe7c2wLFBJKgIdZ
+TOMCAT_PORT=8089

@@ -1,0 +1,9 @@
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/ServletInitializer.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/SpringMongodbApplication.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/controller/BookController.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/model/Book.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/model/DatabaseSequence.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/repository/BookRepo.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/service/BookService.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/service/BookServiceImpl.java
+/home/clouduser/Documents/proyecto/src/main/java/mx/proyecto/fase1/service/SequenceGeneratorService.java

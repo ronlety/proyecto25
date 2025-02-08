@@ -1,0 +1,9 @@
+mx/proyecto/fase1/model/DatabaseSequence.class
+mx/proyecto/fase1/controller/BookController.class
+mx/proyecto/fase1/service/BookServiceImpl.class
+mx/proyecto/fase1/repository/BookRepo.class
+mx/proyecto/fase1/service/SequenceGeneratorService.class
+mx/proyecto/fase1/SpringMongodbApplication.class
+mx/proyecto/fase1/ServletInitializer.class
+mx/proyecto/fase1/model/Book.class
+mx/proyecto/fase1/service/BookService.class
