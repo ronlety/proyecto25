@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-app-ronlety
+  namespace: ronlety
+spec:
+  containers:
+  - name: web-app-ronlety
+    image: ronlety85/proyecto:v8
+    imagePullPolicy: IfNotPresent
+    env:
+     - name: TOMCAT_PORT
+       value: "8089"
+     - name: MONGO_URI
+       value: "mongodb+srv://admindba:gNe7c2wLFBJKgIdZ@cluster0.vboxk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+     - name: MONGO_PORT
+       value: "27017"
+     - name: MONGO_DB
+       value: "BookStore"
+     - name: MONGO_USER
+       value: "admindba"
+     - name: MONGO_PWD
+       value: "gNe7c2wLFBJKgIdZ"

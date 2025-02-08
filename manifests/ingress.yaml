@@ -1,0 +1,16 @@
+piVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: libreria-pod
+  rules:
+  - host: k8s.nuup.ninja
+    http:
+      paths:
+        - path: /ronlety85
+          pathType: Prefix
+          backend:
+            service:
+              name: web-app
+              port:
+               number: 8089
+
