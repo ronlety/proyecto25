@@ -6,7 +6,7 @@ pipeline{
     }
     environment {
        DOCKERHUB_CREDENTIALS = credentials('ronlety')
-       DOCKER_IMAGE = 'ronlety/proyecto:v9'
+       DOCKER_IMAGE = 'ronlety85/proyecto:v9'
     }
 
     stages {
