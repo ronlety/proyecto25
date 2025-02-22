@@ -1,4 +1,4 @@
-FROM docker.io/khipu/openjdk:17-alpine
+FROM docker.io/openjdk:17-oracle
 
 LABEL maintainer="Lety Rojas <ronlety@gmail.com>"
 
