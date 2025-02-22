@@ -18,4 +18,4 @@ spec:
    workspaces:
      - name: output
        persistentVolumeClaim:
-          claimName: workspace
+          claimName: workspace-4
