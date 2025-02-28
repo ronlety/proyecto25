@@ -2,7 +2,7 @@ Modulo 5 -  Maven <br>
 Por : Leticia Rojas Nava<br>
 
 Se instala  la tarea MAVEN del hub de Tekton <br>
-***kubectl apply -f https://api.hub.tekton.dev/v1/resource/tekton/task/maven/0.4/raw*** <br>
+---kubectl apply -f https://api.hub.tekton.dev/v1/resource/tekton/task/maven/0.4/raw--- <br>
  ![Alt Text] (./resources/images/build1.jpg) <br>
 Se valida que se tenga instalada la tarea MAVEN del hub de Tekton <br>
 ***kubectl get task -n diplo-rnl *** <br>
