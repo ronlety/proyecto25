@@ -1,0 +1,31 @@
+﻿kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: applety
+  namespace: ronlety
+  uid: 7fb33ef8-7117-4075-b0cd-996f263388ab
+  resourceVersion: '1011268255'
+  creationTimestamp: '2025-01-30T18:57:48Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2025-01-30T19:00:57Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:MONGO_DB': {}
+          'f:MONGO_PORT': {}
+          'f:MONGO_PWD': {}
+          'f:MONGO_URI': {}
+          'f:MONGO_USER': {}
+          'f:TOMCAT_PORT': {}
+data:
+  MONGO_DB: BookStore
+  MONGO_PORT: '27017'
+  MONGO_PWD: atPiiRSBX9jfRJuS
+  MONGO_URI: >-
+    mongodb+srv://lrojasn:atPiiRSBX9jfRJuS@cluster0.skaur.mongodb.net/?retryWrites=true&=majority&appName=Cluster0
+  MONGO_USER: lrojas
+  TOMCAT_PORT: '8089'
