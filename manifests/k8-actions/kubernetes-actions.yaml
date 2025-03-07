@@ -10,8 +10,9 @@ spec:
    params:
       - name: script
         value: |
+          kubectl get pods
           kubectl delete deployment library 
-          kubectl create deployment library --image=docker.io/ronlety85/proyecto:v9
+          kubectl create deployment library --image=docker.io/ronlety/proyecto:v9
           kubectl get deployment 
    workspaces:
      - name: kubeconfig-dir
