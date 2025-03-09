@@ -5,9 +5,9 @@ _**Por: Leticia Rojas**_
 ### Proyecto
 
 El presente microservicio, describe un CRUD hacia una base de datos de una librería.
-
-###Arquitectura
-! [Diagrama de Arquitectura](resources/arq.png) <br>
+<br>
+###Arquitectura <br>
+![Diagrama de Arquitectura](resources/images/arq.png) <br>
 ### Implementación
 A continuación se describen  los accesos utilizados para Git, Docker y Mongo Cloud <br>
 [Git] (https://github.com/ronlety/proyecto25.git Repositorio Personal ) <br>
