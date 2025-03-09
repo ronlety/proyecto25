@@ -1,0 +1,88 @@
+apiVersion: tekton.dev/v1beta1 
+kind: Pipeline 
+metadata: 
+  name: pipeline-ci
+  namespace: diplo-rnl
+spec: 
+  description: |
+    Laboratorio 3  Pipeline CI clonar,compilar,empaquetar y construir
+  params: 
+    - name: repo-url 
+      type: string 
+    - name: maven-image 
+      type: string
+    - name: image-name
+      type: string
+    - name: deployment-name
+      type: string
+  workspaces: 
+    - name: workspace 
+    - name: maven-settings
+    - name: dockerconfig
+    - name: workspace-deploy
+  tasks:
+    - name: fetch-repository 
+      taskRef: 
+        kind: Task 
+        name: git-clone 
+      params: 
+        - name: url  
+          value: $(params.repo-url) 
+        - name: deleteExisting 
+          value: "true"
+      workspaces:
+        - name: output 
+          workspace: workspace 
+    - name: maven
+      taskRef:
+        name: maven
+      runAfter:
+        - fetch-repository
+      params:
+        - name: GOALS 
+          value: 
+            - -B 
+            - -DskipTests 
+            - clean 
+            - package 
+        - name: MAVEN_IMAGE 
+          value: $(params.maven-image)
+      workspaces:
+        - name: maven-settings 
+          workspace: maven-settings 
+        - name: source  
+          workspace: workspace 
+    - name: build-push-image
+      taskRef:
+        name: buildah
+      runAfter:
+        - maven
+      params:
+        - name: IMAGE 
+          value: $(params.image-name)
+        - name: TLSVERIFY 
+          value: 'false' 
+        - name: STORAGE_DRIVER 
+          value: 'vfs'
+      workspaces:
+        - name: source 
+          workspace: workspace 
+        - name: dockerconfig
+          workspace: dockerconfig
+    - name: deploy
+      taskRef:
+        name: kubernetes-actions
+      runAfter:
+        - build-push-image
+      params:
+        - name: script 
+          value: | 
+            kubectl delete deployment $(params.deployment-name) 
+            kubectl create deployment $(params.deployment-name) --image=$(params.image-name)
+            echo "----------" 
+            kubectl get deployment
+      workspaces:
+        - name: kubeconfig-dir
+          workspace: workspace-deploy
+        - name: manifest-dir
+          workspace: workspace-deploy
