@@ -6,7 +6,7 @@ _**Por: Leticia Rojas**_
 
 El presente microservicio, describe un CRUD hacia una base de datos de una librería.
 
-###Arquitectura
+### Arquitectura
 ! [Diagrama de Arquitectura](resources/arq.png) <br>
 ### Implementación
 A continuación se describen  los accesos utilizados para Git, Docker y Mongo Cloud <br>
