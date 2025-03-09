@@ -44,6 +44,6 @@ spec:
             claimName: workspace-4
           - name: empty-dir
             emptyDir: {}
-          - name: dockerconfig-ws
+          - name: dockerconfig-secret
             secret:
-              secretName: dockerconfig-ws
+              secretName: dockerconfig-secret

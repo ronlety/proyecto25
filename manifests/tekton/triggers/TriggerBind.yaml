@@ -14,4 +14,4 @@ spec:
     - name: image-name
       value: docker.io/cafaray/notificaciones:$(body.head_commit.id)
     - name: deployment-name
-      value: notificaciones-services
+      value: library-services
