@@ -29,24 +29,24 @@ Para las pruebas locales se ejecuta en el navegador: <br>
 GET http://localhost:8089/api/book/ 
 ´´´
 <br>
-![Peticion GET] (resources/images/get.png)
+![Peticion GET](resources/images/get.png)
 <br>
 Otro ejemplo con el ID para consultar la base seria: <br>
 ´´´
 GET http://localhost:8089/api/book/6700d9e395f3b7c472884e4e
 ´´´
 <br>
-![Peticion GET] (resources/images/get2.png) <br>
+![Peticion GET](resources/images/get2.png) <br>
 Para realizar un Borrado hacia la base de datos para un registro ser realiza: <br>
 <br>
 ´´´
 DELETE http://localhost:8089/delete/6700d9e395f3b7c472884e4e
 ´´´
 <br>
-![Borrado DELETE] (resources/images/delete.png)
+![Borrado DELETE](resources/images/delete.png)
 <br>
 La ejecuciñon de la imagen que contiene la aplicación se puede validar a través del comando CURL hacia la IP asignada al POD<br>
-![Prueba Comando Curl] (resources/images/curl.png)
+![Prueba Comando Curl](resources/images/curl.png)
 <br>
 ## Referencias 
 
