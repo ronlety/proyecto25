@@ -29,14 +29,14 @@ Para las pruebas locales se ejecuta en el navegador: <br>
 GET http://localhost:8089/api/book/ 
 ´´´
 <br>
-! [Peticion GET] (resources/images/get.png)
+![Peticion GET] (resources/images/get.png)
 <br>
 Otro ejemplo con el ID para consultar la base seria: <br>
 ´´´
 GET http://localhost:8089/api/book/6700d9e395f3b7c472884e4e
 ´´´
 <br>
-! [Peticion GET] (resources/images/get2.png) <br>
+![Peticion GET] (resources/images/get2.png) <br>
 Para realizar un Borrado hacia la base de datos para un registro ser realiza: <br>
 <br>
 ´´´
