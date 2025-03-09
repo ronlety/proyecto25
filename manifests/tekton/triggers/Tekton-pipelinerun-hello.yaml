@@ -1,0 +1,19 @@
+
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+   generateName: pipelinerun-helloworld-
+   namespace: diplo-rnl
+spec:
+   serviceAccountName: tekton-sa
+   pipelineRef:
+      name: pipeline-hello-world
+   params:
+      - name: your-name
+        value: "Lety Rojas"
+      - name: repo-url
+        value: https://github.com/ronlety85/proyecto25
+service.git
+   workspaces:
+      - name: empty-dir
+        emptyDir: {}
