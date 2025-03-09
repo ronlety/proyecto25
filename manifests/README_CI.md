@@ -42,11 +42,11 @@ Si hubiera algun problema puedes detallar las bitácoras
 <br>
 Una vez clonada,  se utiliza la tarea maven que ofrece tekton,
 <br> 
-[ maven tekton] (https://hub.tekton.dev/task/maven)
+[maven tekton](https://hub.tekton.dev/task/maven)
 <br>
 Se utilizo el archivo [mvn.yaml](https://github.com/ronlety/proyecto/25/blob/feature/git-clone-build/manifests/continuos-deployment/manifest/git-clone/mvn-yaml) para ejecutar la tarea previamente instalada.
 <br>
-![Ejecucion de maven](./resources/images/build1.jpg)
+![Ejecucion de maven](resources/images/build1.jpg)
 <br>
 Se valida la correcta ejecuión con del comando 
 <br>
@@ -55,6 +55,4 @@ Se valida la correcta ejecuión con del comando
 ´´´
 <br>
 ![Validación de tarea maven](resources/images/build2.jpng)
-
-´´´
-
+<br>
