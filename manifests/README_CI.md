@@ -14,7 +14,7 @@ Cada tarea ejecutada crea un pod. Para instalar una tarea conformada por etapas 
 kubectl create -f https://api.hub.tekton.dev/v1/resource/tekton/git-clone/0.9/raw -n diplo-rnl
 '
 <br>
-### Clonando desde repositorio Git
+##  Clonando desde repositorio Git <br>
 Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml
 <br>
 [TaskRun.yaml](manifests/git-clone/TaskRun.yaml)
@@ -38,7 +38,7 @@ Si hubiera algun problema puedes detallar las bitácoras
 '
 <br>
 
-## Construyendo la imagen  de la aplicación
+## Construyendo la imagen  de la aplicación <br>
 <br>
 Una vez clonada,  se utiliza la tarea maven que ofrece tekton,
 <br> 
