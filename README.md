@@ -28,20 +28,21 @@ Construyendo la imagen de la aplicación <br>
 
 Una vez clonada, se utiliza la tarea maven que ofrece tekton <br>
 [maven tekton](https://hub.tekton.dev/task/maven)
-Se utilizo el archivo [mvn.yaml](manifests/continuos-deployment/manifest/git-clone/mvn-yaml) para ejecutar la tarea previamente instalada.<br>
+Se utilizo el archivo [mvn.yaml](manifest/git-clone/mvn-yaml) para ejecutar la tarea previamente instalada.<br>
 ![Ejecucion de maven](resources/images/build1.jpg) <br>
 Se valida la correcta ejecuión con del comando <br>
-´´´ #kubectl get task -n diplo-rnl ´´´ <br>
+' #kubectl get task -n diplo-rnl ' <br>
 ![Validación de tarea maven](resources/images/build2.jpng) <br>
-''kubectl create -f https://api.hub,tekton.dev/v1/resource/tekton/git-clone/0.9/raw -n diplo-rnl ´´´ <br>
-### Clonando desde repositorio Git Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml <br>
-[TaskRun.yaml]( https://github.com/ronlety/proyecto25/tree/feature/git-clone-build/manifests/git-clone/TaskRun.yaml) <br>
+' #kubectl create -f https://api.hub,tekton.dev/v1/resource/tekton/git-clone/0.9/raw -n diplo-rnl ' <br>
+### Clonando desde repositorio Git  <br>
+Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml <br>
+[TaskRun.yaml](manifests/git-clone/TaskRun.yaml) <br>
 Se ejecuta con el comando: <br>
-´´´ #kubectl create -f TaskRun.yaml -n diplo-rnl ´´´ <br>
+' #kubectl create -f TaskRun.yaml -n diplo-rnl ' <br>
 Se valida que se hay ejecutado correstamente <br>
-´´´ #kubectl get taskrun -n diplo-rnl ´´´ <br>
+' #kubectl get taskrun -n diplo-rnl ' <br>
 Si hubiera algun problema puedes detallar las bitácoras <br>
-´´´ #kubectl describe taskrun -n diplo-rnl ´´´ <br>
+' #kubectl describe taskrun -n diplo-rnl ' <br>
 Construyendo la imagen de la aplicación <br>
 
 Una vez clonada, se utiliza la tarea maven que ofrece tekton, <br>
@@ -49,5 +50,5 @@ Una vez clonada, se utiliza la tarea maven que ofrece tekton, <br>
 Se utilizo el archivo [mvn.yaml](manifest/git-clone/mvn-yaml) para ejecutar la tarea previamente instalada. <br>
 ![Ejecucion de maven](resources/images/build1.jpg) <br>
 Se valida la correcta ejecuión con del comando <br>
-´´´ #kubectl get task -n diplo-rnl ´´´ <br>
+' #kubectl get task -n diplo-rnl ' <br>
 ![Validación de tarea maven](resources/images/build2.jpng) <br>
