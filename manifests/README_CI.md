@@ -4,7 +4,7 @@
 <br>
 Esta herramienta opensource nos permite  crear sistemas CI/CD, a través de GitHub en este ejemplo, nos pemite crear componentes YAML que pueden construit, clonar y desplegar aplicaciones usando nuestra infraestructura, en este caso el laboratorio de DGTIC.
 <br>
-## Instalación de componentes
+## Instalación de componentes <br>
 <br>
 Tekton ya tiene componentes que se pueden instalar y usar facilmente, hemos usado **steps** , **Tasks***
 <br>
@@ -15,6 +15,7 @@ kubectl create -f https://api.hub.tekton.dev/v1/resource/tekton/git-clone/0.9/ra
 '
 <br>
 ##  Clonando desde repositorio Git <br>
+<br>
 Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml
 <br>
 [TaskRun.yaml](manifests/git-clone/TaskRun.yaml)
