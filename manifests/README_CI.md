@@ -10,9 +10,9 @@ Tekton ya tiene componentes que se pueden instalar y usar facilmente, hemos usad
 <br>
 Cada tarea ejecutada crea un pod. Para instalar una tarea conformada por etapas  que hemos de ejecutar:
 <br>
-´´´
+'
 kubectl create -f https://api.hub.tekton.dev/v1/resource/tekton/git-clone/0.9/raw -n diplo-rnl
-´´´
+'
 <br>
 ### Clonando desde repositorio Git
 Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml
