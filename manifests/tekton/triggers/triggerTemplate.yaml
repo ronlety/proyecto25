@@ -41,7 +41,7 @@ spec:
             name: maven-settings
           - name: workspace
             persistentVolumeClaim:
-            claimName: workspace-4
+            claimName: workspace
           - name: empty-dir
             emptyDir: {}
           - name: dockerconfig-secret

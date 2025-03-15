@@ -1,28 +1,26 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-name: tekton-role
-namespace: {{ namespace }}
+    name: tekton-role
+    namespace: diplo-rnl
 rules:
-- apiGroups: [""]
-resources: ["pods", "persistentvolumeclaims", "secrets",
-"configmaps"]
-verbs: ["get", "list", "watch", "create", "update", "delete"]
-- apiGroups: ["tekton.dev"] # Controller needs to access these tekton
-resources to do the specific actions
-resources: ["pipelineruns", "taskruns"]
-verbs: ["get", "list", "watch", "create", "update", "delete"]
+    - apiGroups: [""]
+      resources: ["pods", "persistentvolumeclaims", "secrets","configmaps"]
+      verbs: ["get", "list", "watch", "create", "update", "delete"]
+    - apiGroups: ["tekton.dev"] # Controller needs to access these tekton
+      resources: ["pipelineruns", "taskruns"]
+      verbs: ["get", "list", "watch", "create", "update", "delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-name: tekton-rolebinding
-namespace: {{ namespace }}
+    name: tekton-rolebinding
+    namespace: diplo-rnl
 subjects:
-- kind: ServiceAccount
-name: tekton-sa
-namespace: default
+   - kind: ServiceAccount
+     name: tekton-sa
+     namespace: default
 roleRef:
-kind: Role
-name: tekton-role
-apiGroup: rbac.authorization.k8s.io
+   kind: Role
+   name: tekton-role
+   apiGroup: rbac.authorization.k8s.io
