@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+   generateName: kubernetes-actions-
+   namespace: diplo-rnl
+spec:
+   serviceAccountName: tekton-sa
+   taskRef:
+      name: kubernetes-actions
+   params:
+      - name: script
+        value: |
+          kubectl get pods
+          kubectl delete deployment library 
+          kubectl create deployment library --image=docker.io/ronlety/proyecto:v9
+          kubectl get deployment 
+   workspaces:
+     - name: kubeconfig-dir
+       emptyDir: {}
+     - name: manifest-dir
+       emptyDir: {}

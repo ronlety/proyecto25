@@ -1,0 +1,76 @@
+﻿apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    serving.knative.dev/creator: usuariocn13
+    serving.knative.dev/lastModifier: usuariocn13
+  creationTimestamp: '2025-02-04T19:52:14Z'
+  generation: 1
+  managedFields:
+    - apiVersion: serving.knative.dev/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:template':
+            .: {}
+            'f:spec':
+              .: {}
+              'f:containers': {}
+      manager: Mozilla
+      operation: Update
+      time: '2025-02-04T19:52:14Z'
+    - apiVersion: serving.knative.dev/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:conditions': {}
+          'f:latestCreatedRevisionName': {}
+          'f:observedGeneration': {}
+          'f:url': {}
+      manager: controller
+      operation: Update
+      subresource: status
+      time: '2025-02-04T19:52:15Z'
+  name: sample
+  namespace: ronlety
+  resourceVersion: '1024791121'
+  uid: 191f7f6a-da31-48a9-a2a1-de01e4e22374
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containerConcurrency: 0
+      containers:
+        - image: openshift/hello-openshift
+          name: user-container
+          readinessProbe:
+            successThreshold: 1
+            tcpSocket:
+              port: 0
+          resources: {}
+      enableServiceLinks: false
+      timeoutSeconds: 300
+  traffic:
+    - latestRevision: true
+      percent: 100
+status:
+  conditions:
+    - lastTransitionTime: '2025-02-04T19:52:15Z'
+      status: Unknown
+      type: ConfigurationsReady
+    - lastTransitionTime: '2025-02-04T19:52:15Z'
+      message: Configuration "sample" is waiting for a Revision to become ready.
+      reason: RevisionMissing
+      status: Unknown
+      type: Ready
+    - lastTransitionTime: '2025-02-04T19:52:15Z'
+      message: Configuration "sample" is waiting for a Revision to become ready.
+      reason: RevisionMissing
+      status: Unknown
+      type: RoutesReady
+  latestCreatedRevisionName: sample-00001
+  observedGeneration: 1
+  url: 'https://sample-ronlety.paas.nube.unam.mx'

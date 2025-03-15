@@ -1,0 +1,11 @@
+spec:
+params:
+- name: message
+type: string
+default: "Hello World!"
+steps:
+- name: echo
+image: busybox
+script: |
+#!/bin/sh
+echo $(params.message)
