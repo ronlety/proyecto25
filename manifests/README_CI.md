@@ -57,3 +57,21 @@ Se valida la correcta ejecuión con del comando
 <br>
 ![Validación de tarea maven](resources/images/build2.jpng)
 <br>
+
+## Colocando la imagen en el registro <br>
+
+Cuando la imagen se genera con éxito, se coloca la imagen al respositorio del cluster Kubernetes. <br>
+Previamente se ha generado un filesystem  <br>
+Para ello se utiliza el archivo  <br>
+[buildTaskrun](manifests/git-cone/Taskrun.yaml) <br>
+
+## Desplegando  el microservicio en el cluster de Kubernetes <br>
+
+Ya teniendo la imagen en el cluster de kubernetes es necesario desplegarlo. Para ello se utilizo el archivo yaml (manifests/k8-actions/kubernetes-actions.yaml) <br>
+
+## Ejecutando pipeline 
+
+Todas las tareas previas como clonar, compilar, desplegar se pueden generar de forma automatica <br>
+Para esto se utiliza el yaml (manifests/examples/pipelines/
+
+
