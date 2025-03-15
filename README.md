@@ -4,26 +4,26 @@
 
 Esta herramienta opensource nos permite crear sistemas CI/CD, a través de GitHub en este ejemplo, nos pemite crear componentes YAML que pueden construit, clonar y desplegar aplicaciones usando nuestra infraestructura, en este caso el laboratorio de DGTIC.<br>
 ## Instalación de  Tekton <br>
-Tekton ya tiene componentes que se pueden instalar y usar facilmente, hemos usado _**steps**_ , _**Tasks***_
-Cada tarea ejecutada crea un pod. Para instalar una tarea conformada por etapas que hemos de ejecutar: 
-# kubectl create -f  https://
+Tekton ya tiene componentes que se pueden instalar y usar facilmente, hemos usado _**steps**_ , _**Tasks***_ <br>
+Cada tarea ejecutada crea un pod. Para instalar una tarea conformada por etapas que hemos de ejecutar: <br>
+ ' #kubectl apply -f  https://storage.googleapis.com/tekton-releases/pipelines/latest/release.yaml ' <br>
 
-### P asos para el despliegue de una aplicación Java con Tekton
-Tekton
-
-Esta herramienta opensource nos permite crear sistemas CI/CD, a través de GitHub en este ejemplo, nos pemite crear componentes YAML que pueden construit, clonar y desplegar aplicaciones usando nuestra infraestructura, en este caso el laboratorio de DGTIC.
-## Instalación de componentes tasks de Tekton
-Tekton ya tiene componentes que se pueden instalar y usar facilmente, hemos usado _**steps**_ , _**Tasks***_
-Cada tarea ejecutada crea un pod. Para instalar una tarea conformada por etapas que hemos de ejecutar:
-´´´ kubectl create -f https://api.hub,tekton.dev/v1/resource/tekton/git-clone/0.9/raw -n diplo-rnl ´´´
-### Clonando desde repositorio Git Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml
-[TaskRun.yaml](manifests/git-clone/TaskRun.yaml)
+### Pasos para el despliegue de una aplicación Java con Tekton <br>
+#Tekton <br>
+Esta herramienta opensource nos permite crear sistemas CI/CD, a través de GitHub en este ejemplo, nos pemite crear componentes YAML que pueden construit, clonar y desplegar aplicaciones usando nuestra infraestructura, en este caso el laboratorio de DGTIC. <br>
+## Instalación de componentes tasks de Tekton <br>
+Tekton ya tiene componentes que se pueden instalar y usar facilmente, hemos usado _**steps**_ , _**Tasks***_ <br>
+Cada tarea ejecutada crea un pod. Para instalar una tarea conformada por etapas que hemos de ejecutar: <br>
+'  #kubectl create -f https://api.hub,tekton.dev/v1/resource/tekton/git-clone/0.9/raw -n diplo-rnl ' <br>
+### Clonando desde repositorio Git  <br>
+Para clonar el código desde nuestro repositorio, se utilizo el archivo yaml <br>
+[TaskRun.yaml](manifests/git-clone/TaskRun.yaml) <br>
 Se ejecuta con el comando: <br>
-´´´ #kubectl create -f TaskRun.yaml -n diplo-rnl ´´´ <br>
+' #kubectl create -f TaskRun.yaml -n diplo-rnl ' <br>
 Se valida que se hay ejecutado correstamente <br>
-´´´ #kubectl get taskrun -n diplo-rnl ´´´ <br>
+' #kubectl get taskrun -n diplo-rnl ' <br>
 Si hubiera algun problema puedes detallar las bitácoras <br>
-´´´ #kubectl describe taskrun -n diplo-rnl ´´´ <br>
+' #kubectl describe taskrun -n diplo-rnl ' <br>
 Construyendo la imagen de la aplicación <br>
 
 Una vez clonada, se utiliza la tarea maven que ofrece tekton <br>
