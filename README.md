@@ -52,3 +52,18 @@ Se utilizo el archivo [mvn.yaml](manifest/git-clone/mvn-yaml) para ejecutar la t
 Se valida la correcta ejecuión con del comando <br>
 ' #kubectl get task -n diplo-rnl ' <br>
 ![Validación de tarea maven](resources/images/build2.jpng) <br>
+### Colocando la imagen en el repositorio de Docker <br>
+
+Para poder colocar la imagen compilada previamente es necesario crear un secret con los datos de conexion al repositorio de docker
+
+'#kubectl create secret docker-registry dockersecret --docker-server=docker.io --docker-username=ronlety85 --docker-password='XXX' --docker-email=ronlety@gmail.com -n ' <br>
+![secrets](resources/Captura de pantalla 2025-03-16 140541.png) <br>
+
+### validando la ejecucion del pipeline <br>
+Una vez que ya tenemos los artefactos creados, las tareas ejecutandose y validadas. <br>
+YA creado el secrets para acceso al repositorio, ejecutamos el pipeline y validamos su ejecucion. <br>
+![pipeline](resources/Captura de pantalla 2025-03-16 140214.png) >br>
+
+
+'
+
