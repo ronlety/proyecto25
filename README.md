@@ -48,7 +48,9 @@ Construyendo la imagen de la aplicación <br>
 Una vez clonada, se utiliza la tarea maven que ofrece tekton, <br>
 [maven tekton](https://hub.tekton.dev/task/maven) <br>
 Se utilizo el archivo [mvn.yaml](manifest/git-clone/mvn-yaml) para ejecutar la tarea previamente instalada. <br>
-![Ejecucion de maven](resources/images/build1.jpg) <br>
+<br>
+![Ejecucion de maven](resources/images/build1.jpg)
+<br>
 Se valida la correcta ejecuión con del comando <br>
 ' #kubectl get task -n diplo-rnl ' <br>
 ![Validación de tarea maven](resources/images/build2.jpng) <br>
@@ -57,12 +59,15 @@ Se valida la correcta ejecuión con del comando <br>
 Para poder colocar la imagen compilada previamente es necesario crear un secret con los datos de conexion al repositorio de docker
 
 '#kubectl create secret docker-registry dockersecret --docker-server=docker.io --docker-username=ronlety85 --docker-password='XXX' --docker-email=ronlety@gmail.com -n ' <br>
-![secrets](resources/Captura de pantalla 2025-03-16 140541.png) <br>
+![comandosecrets](resources/secret.png) 
+<br>
 
 ### validando la ejecucion del pipeline <br>
 Una vez que ya tenemos los artefactos creados, las tareas ejecutandose y validadas. <br>
-YA creado el secrets para acceso al repositorio, ejecutamos el pipeline y validamos su ejecucion. <br>
-![pipeline](resources/Captura de pantalla 2025-03-16 140214.png) >br>
+Ya creado el secrets para acceso al repositorio, ejecutamos el pipeline y validamos su ejecucion. <br>
+<br>
+![pipeline](resources/pipelinerun.png) 
+<br>
 
 
 '
