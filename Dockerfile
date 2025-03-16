@@ -1,5 +1,5 @@
 
-FROM docker.io/openjdk:17-oracle
+FROM docker.io/openjdk:11-oracle
 
 LABEL maintainer="Lety Rojas <ronlety@gmail.com>"
 
