@@ -1,0 +1,88 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: rnl-library-build
+  namespace: diplo-rnl
+spec:
+  params:
+  - name: repo-url
+    type: string
+    description: The git repository URL to clone from.
+  - name: branch-name
+    type: string
+    description: The git branch to clone.
+  - name: image-name
+    type: string
+    description: The container image to build.    
+  workspaces:
+  - name: workspace
+  - name: maven-settings
+  tasks:
+  - name: fetch-repo
+    taskRef:
+      name: git-clone
+    workspaces:
+    - name: output
+      workspace: workspace
+    params:
+    - name: url
+      value: $(params.repo-url)
+    - name: revision
+      value: $(params.branch-name)
+  - name: maven-run
+    taskRef:
+      name: maven
+    runAfter:
+      - fetch-repo
+    params:
+      - name: CONTEXT_DIR
+        value: "."
+      - name: GOALS
+        value:
+          - -DskipTests
+          - clean
+          - package
+    workspaces:
+      - name: maven-settings
+        workspace: maven-settings
+      - name: source
+        workspace: workspace
+  - name: build-image
+    taskRef:
+      name: buildah
+    runAfter:
+      - maven-run
+    params:
+      - name: IMAGE
+        value: $(params.image-name)
+      - name: BUILDER_IMAGE
+        value: quay.io/buildah/stable:v1.17.0
+      - name: DOCKERFILE
+        value: ./Dockerfile
+    workspaces:
+      - name: source
+        workspace: workspace      
+---
+
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: rnl-library-pipeline-run
+  namespace: diplo-rnl
+spec:
+  serviceAccountName: tekton
+  pipelineRef:
+    name: rnl-library-build
+  workspaces:
+    - name: maven-settings
+      emptyDir: {}
+    - name: workspace
+      persistentvolumeclaim:
+        claimName: tektonclaim
+  params:
+  - name: repo-url
+    value: https://github.com/ronlety/proyecto25.git
+  - name: branch-name
+    value: main
+  - name: image-name
+    value: docker.io/ronlety85/proyecto:v9  

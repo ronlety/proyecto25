@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  generateName: git-clone-
+  namespace: diplo-rnl
+spec:
+  taskRef:
+    kind: Task
+    name: git-clone
+  podTemplate:
+    securityContext:
+      fsGroup: 65532
+  params:
+  - name: url
+    value: https://github.com/ronlety/diplomado25.git
+  - name: deleteExisting
+    value: "true"
+  workspaces:
+    - name: output
+      # emptyDir: {}
+      persistentVolumeClaim:
+        claimName: workspace
+
